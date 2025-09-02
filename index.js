@@ -17,7 +17,11 @@ class JuegoDeAdivinanza {
         console.log(`Pista: ${this.pista}`);
 
         while (this.intentos > 0) {
-            let adivinanza = prompt('Introduce tu adivinanza: ');
+            let adivinanza = prompt('Introduce tu adivinanza (escribe "salir" para terminar el juego): ');
+            if (adivinanza === "salir") {
+                console.log('Has salido del juego.');
+                return;
+            }
             if (adivinanza === this.palabraSecreta) {
                 console.log('¡Felicidades! Adivinaste la palabra.');
                 return;
