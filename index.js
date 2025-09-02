@@ -12,7 +12,7 @@ class JuegoDeAdivinanza {
     }
 
     jugar() {
-        console.log('Bienvenido al Juego de Adivinanza!');
+        console.log('¡Bienvenido al Juego de Adivinanzas!');
         console.log(`Tienes ${this.intentos} intentos para adivinar la palabra.`);
         console.log(`Pista: ${this.pista}`);
 
