@@ -1,0 +1,14 @@
+{
+  "name": "juego-de-adivinanza",
+  "version": "1.0.0",
+  "description": "Juego para adivinar palabras con pistas.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "prompt-sync": "^4.2.0"
+  },
+  "devDependencies": {},
+  "license": "MIT"
+}
