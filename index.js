@@ -1,39 +1,39 @@
 const prompt = require('prompt-sync')({ sigint: true });
 
-class JuegoDeAdivinanza {
-    constructor(palabraSecreta) {
-        this.palabraSecreta = palabraSecreta;
-        this.intentos = 5;
-        this.pista = '';
+class GuessingGame {
+    constructor(secretWord) {
+        this.secretWord = secretWord;
+        this.attempts = 5;
+        this.clue = '';
     }
 
-    establecerPista(pista) {
-        this.pista = pista;
+    setClue(clue) {
+        this.clue = clue;
     }
 
-    jugar() {
-        console.log('¡Bienvenido al Juego de Adivinanzas!');
-        console.log(`Tienes ${this.intentos} intentos para adivinar la palabra.`);
-        console.log(`Pista: ${this.pista}`);
+    play() {
+        console.log('Welcome to the Guessing Game!');
+        console.log(`You have ${this.attempts} attempts to guess the word.`);
+        console.log(`Clue: ${this.clue}`);
 
-        while (this.intentos > 0) {
-            let adivinanza = prompt('Introduce tu adivinanza (escribe "salir" para terminar el juego): ');
-            if (adivinanza === "salir") {
-                console.log('Has salido del juego.');
+        while (this.attempts > 0) {
+            let guess = prompt('Enter your guess (type "exit" to end the game): ');
+            if (guess === 'exit') {
+                console.log('You have exited the game.');
                 return;
             }
-            if (adivinanza === this.palabraSecreta) {
-                console.log('¡Felicidades! Adivinaste la palabra.');
+            if (guess === this.secretWord) {
+                console.log('Congratulations! You guessed the word.');
                 return;
             } else {
-                this.intentos--;
-                console.log(`Incorrecto. Te quedan ${this.intentos} intentos.`);
+                this.attempts--;
+                console.log(`Incorrect. You have ${this.attempts} attempts left.`);
             }
         }
-        console.log(`Juego terminado. La palabra era: ${this.palabraSecreta}`);
+        console.log(`Game over. The word was: ${this.secretWord}`);
     }
 }
 
-const juego = new JuegoDeAdivinanza('javascript');
-juego.establecerPista('Es un lenguaje de programación ampliamente utilizado.');
-juego.jugar();
+const game = new GuessingGame('javascript');
+game.setClue('It is a widely used programming language.');
+game.play();
