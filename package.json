@@ -1,6 +1,6 @@
 {
   "name": "juego-de-adivinanza",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Juego para adivinar palabras con pistas.",
   "main": "index.js",
   "scripts": {
